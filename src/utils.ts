@@ -23,7 +23,7 @@ function getStateFile(inp: Input): string {
   const transcriptPath = getStateTranscriptPath(inp);
   if (transcriptPath) return `${transcriptPath}.wakatime`;
 
-  return path.join(getHomeDirectory(), '.wakatime', 'claude-code', `${sanitizeFileName(getFallbackStateId(inp))}.wakatime`);
+  return path.join(getHomeDirectory(), '.claude', 'config', 'wakatime', 'claude-code', `${sanitizeFileName(getFallbackStateId(inp))}.wakatime`);
 }
 
 export function shouldSendHeartbeat(inp?: Input): boolean {

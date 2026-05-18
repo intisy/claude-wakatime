@@ -16,7 +16,7 @@ export class Options {
 
   constructor() {
     const home = getHomeDirectory();
-    const wakaFolder = path.join(home, '.wakatime');
+    const wakaFolder = path.join(home, '.claude', 'config', 'wakatime');
     try {
       if (!fs.existsSync(wakaFolder)) {
         fs.mkdirSync(wakaFolder, { recursive: true });
@@ -27,7 +27,7 @@ export class Options {
       throw e;
     }
 
-    this.configFile = path.join(home, '.wakatime.cfg');
+    this.configFile = path.join(home, '.claude', 'config', 'wakatime', '.wakatime.cfg');
     this.internalConfigFile = path.join(this.resourcesLocation, 'wakatime-internal.cfg');
     this.logFile = path.join(this.resourcesLocation, 'wakatime.log');
   }
